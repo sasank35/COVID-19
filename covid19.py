@@ -1,5 +1,6 @@
 import csv
 from operator import add 
+import matplotlib.pyplot as plt
 
 CSSE_FOLDER = "csse_covid_19_data"
 CSSE_TIME_SERIES_FOLDER = "csse_covid_19_time_series"
@@ -23,6 +24,7 @@ DATE_START = 4
 DATE_END = 60
 
 csse_timeseries_cases_path = CSSE_FOLDER + SLASH + CSSE_TIME_SERIES_FOLDER + SLASH + CSSE_CASES_FILE
+csse_timeseries_deaths_path = CSSE_FOLDER + SLASH + CSSE_TIME_SERIES_FOLDER + SLASH + CSSE_DEATHS_FILE
 csse_timeseries_cases_file = open(csse_timeseries_cases_path, 'r')
 
 line_count = 0
@@ -56,3 +58,17 @@ with open(csse_timeseries_cases_path,'r') as csv_file:
 
 csse_timeseries_cases_file.close()
 
+cases_countries = {}
+for country in countries_only:
+	case_list = []
+	for count in countries_only[country]:
+		if count != 0 :
+			case_list.append(count)
+	if(count > 5000):
+		cases_countries[country] = case_list
+		plt.plot(case_list, label=country)
+plt.xlabel('Number of days since first positive case of COVID-19')
+plt.ylabel('Number of cumulative positive cases')
+plt.title('Countries with greater than 5000 cases')
+plt.legend()
+plt.show()
