@@ -1,7 +1,4 @@
-DATA SOURCE: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE
-
-graphs folder contains the graphs
-covid19.py contains the script
+COVID-19
 
 ![Alt text](graphs/19032020_5000.png?raw=true)
 
@@ -11,3 +8,5 @@ covid19.py contains the script
 
 ![Alt text](graphs/19032020_5000china.png?raw=true)
 
+DATA SOURCE: 2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE
+covid19.py contains the script
